@@ -3,10 +3,10 @@
 namespace sisVent\Http\Controllers;
 
 use Illuminate\Http\Request;
-use sisVentas\Http\Requests;
-use sisVentas\Categoria;
+use sisVent\Http\Requests;
+use sisVent\Categoria;
 use Illuminate\Support\Facades\Redirect;
-use sisVentas\Http\Requests\CategoriaFormRequest;
+use sisVent\Http\Requests\CategoriaFormRequest;
 use DB;
 
 class CategoriaController extends Controller
@@ -36,8 +36,8 @@ class CategoriaController extends Controller
     public function store(CategoriaFormRequest $request){
         $categoria=new Categoria;
         $categoria->nombre=$request->get('nombre');
-        $categoria->descripcion=$request->get("descripcion");
-        $catagoria->condicion='1';
+        $categoria->descripcion=$request->get('descripcion');
+        $categoria->condicion='1';
         $categoria->save();
 
         return Redirect::to('almacen/categoria');
